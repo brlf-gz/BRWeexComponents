@@ -1,8 +1,24 @@
 {
-    "name": "weex",
-    "version": "1.0.0",
-    "description": "A weex project",
-    "main": "index.js",
+    "name": "brweexcomponents",
+    "version": "0.0.1",
+    "description": "博瑞终端组weex组件库、插件以及公共方法",
+    "homepage": "https://github.com/brlf-gz/BRWeexComponents",
+    "main": "src/modules/index.js",
+    "files": [
+        "src"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/brlf-gz/BRWeexComponents.git"
+    },
+    "bugs": {
+        "url": "https://github.com/brlf-gz/BRWeexComponents/issues"
+    },
+    "keywords": [
+        "weex",
+        "vue",
+        "component"
+    ],
     "scripts": {
         "start": "npm run serve",
         "build": "webpack",
@@ -10,10 +26,7 @@
         "dev": "webpack --config webpack.config.js --watch",
         "serve": "webpack-dev-server --config webpack.dev.js --progress --watch --open"
     },
-    "keywords": [
-        "weex"
-    ],
-    "author": "",
+    "author": "brlf",
     "license": "MIT",
     "dependencies": {
         "fs-extra": "^4.0.1",

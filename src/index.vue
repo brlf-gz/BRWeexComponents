@@ -3,6 +3,8 @@
     <image :src="logoUrl" class="logo"></image>
     <text class="title">Hello {{target}}</text>
     <text class="desc">Now, let's use vue to build your weex app.</text>
+    <!--使用模块中注入的自定义组件-->
+    <v-base-button></v-base-button>
   </div>
 </template>
 
@@ -14,14 +16,27 @@
 </style>
 
 <script>
+
+  import Vue from "vue"
+  import brmodules from './modules/index'
+
+  //使用模块中编写的插件
+  Vue.use(brmodules);
+
   export default {
-    data: {
-      logoUrl: 'http://img1.vued.vanthink.cn/vued08aa73a9ab65dcbd360ec54659ada97c.png',
-      target: 'World'
+    data: function() {
+        return {
+            logoUrl: 'http://img1.vued.vanthink.cn/vued08aa73a9ab65dcbd360ec54659ada97c.png',
+            target: 'World'
+        }
+    },
+    created: function() {
+        console.log("=========Vue实例对象调用:" + this.$utils.DateUtil.format("yyyy-MM-dd hh:mm:ss", new Date()));
+        console.log("=========Vue全局对象调用:" + Vue.brutils.DateUtil.format("yyyy-MM-dd hh:mm:ss", new Date()));
     },
     methods: {
       update: function (e) {
-        this.target = 'Weex'
+        this.target = 'Weex';
         console.log('target:', this.target)
       }
     }
